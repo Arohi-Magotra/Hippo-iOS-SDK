@@ -320,6 +320,7 @@ enum AgentEndPoints: String {
     case clearAnnouncements = "api/broadcast/clearAnnouncements"
     
     case assignAgent = "api/agent/assignAgent"
+    case agentStatus = "api/agent/editInfo"
 }
 
 enum BroadcastType: String, CaseCountable {
