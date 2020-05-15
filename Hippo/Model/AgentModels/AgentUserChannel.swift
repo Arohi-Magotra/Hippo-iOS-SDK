@@ -135,13 +135,13 @@ class AgentUserChannel {
                     if HippoConfig.shared.appUserType == .agent  {
                         if versionCode >= 350 {
                             HippoConfig.shared.log.trace("UserChannel:: --->\(messageDict)", level: .socket)
-                            CallManager.shared.voipNotificationRecieved(payloadDict: messageDict)
+                            if UIApplication.shared.applicationState == .active {
+                                // if let channel_id = messageDict["channel_id"] as? Int, isSubscribed() == false {
+                                CallManager.shared.voipNotificationRecieved(payloadDict: messageDict)
+                            }
                         }
                     }
 
-                    
-//                HippoConfig.shared.log.trace("UserChannel:: --->\(messageDict)", level: .socket)
-//                    CallManager.shared.voipNotificationRecieved(payloadDict: messageDict)
                 }
                 let conversation = AgentConversation(json: messageDict)
     //            HippoConfig.shared.log.trace("UserChannel:: --->\(messageDict)", level: .socket)

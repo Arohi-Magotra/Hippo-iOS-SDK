@@ -14,7 +14,9 @@ var userDetailData = [String: Any]()
 
 
 let fuguAppVersion = "2.1.15"
-let versionCode = 350
+
+let versionCode = 350//(newCalling)
+
 
 
 /*
